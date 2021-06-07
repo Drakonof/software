@@ -21,6 +21,7 @@ typedef enum
 	un_init_ = -2,
 	error_,
 	ok_,
+	failure_
 }
 status;
 
