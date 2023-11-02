@@ -1,0 +1,125 @@
+{
+  "gpio":
+    {
+      "start_address": "0x00000000",
+      "reg":
+        {
+          "gpio_data":
+            {
+              "addr_offset": "0x00000000",
+              "field":
+                {
+                  "gpio_data": {"shift": "0", "width": "32", "value": "0"}
+                }
+            },
+          "gpio_tri":
+            {
+              "addr_offset": "0x00000004",
+              "field":
+                {
+                  "gpio_tri": {"shift": "0", "width": "32", "value": "0"}
+                }
+            },
+          "gpio2_data":
+            {
+              "addr_offset": "0x00000008",
+              "field":
+                {
+                  "gpio2_data": {"shift": "0", "width": "32", "value": "0"}
+                }
+            },
+          "gpio2_tri":
+            {
+              "addr_offset": "0x0000000C",
+              "field":
+                {
+                  "gpio2_tri": {"shift": "0", "width": "32", "value": "0"}
+                }
+            },
+          "gier":
+            {
+              "addr_offset": "0x0000011C",
+              "field":
+                {
+                 "reserve": {"shift": "0", "width": "31", "value": "X"},
+                 "global_interrupt_enable": {"shift": "31", "width": "1", "value": "0"}
+                  
+                }
+            },
+          "ip_ier":
+            {
+              "addr_offset": "0x00000128",
+              "field":
+                {
+                  "channel_1_interrupt_enable": {"shift": "0", "width": "1", "value": "0"},
+                  "channel_2_interrupt_enable": {"shift": "1", "width": "1", "value": "0"},
+                  "reserve": {"shift": "2", "width": "30", "value": "X"}
+                }
+            },
+          "ip_isr":
+            {
+              "addr_offset": "0x00000120",
+              "field":
+                {
+                  "channel_1_interrupt_status": {"shift": "0", "width": "1", "value": "0"},
+                  "channel_2_interrupt_status": {"shift": "1", "width": "1", "value": "0"},
+                  "reserve": {"shift": "2", "width": "30", "value": "X"}
+                }
+            }
+        }
+    },
+
+  "uart_lite":
+    {
+      "start_address": "0x00020000",
+      "reg":
+        {
+          "rx_fifo": 
+            {
+              "addr_offset": "0x00000000",
+              "field":
+                {
+                  "rx_data": {"shift": "0", "width": "8", "value": "0"},
+                  "reserve": {"shift": "8", "width": "24", "value": "X"}
+                }
+            },
+          "tx_fifo": 
+            {
+              "addr_offset": "0x00000004",
+              "field":
+                {
+                  "tx_data": {"shift": "0", "width": "8", "value": "0"},
+                  "reserve": {"shift": "8", "width": "24", "value": "X"}
+                }
+            },
+            "stat_reg": 
+            {
+              "addr_offset": "0x00000008",
+              "field":
+                {
+                  "rx_fifo_valid_data": {"shift": "0", "width": "1", "value": "0"},
+                  "rx_fifo_full": {"shift": "1", "width": "1", "value": "0"},
+                  "tx_fifo_empty": {"shift": "2", "width": "1", "value": "0"},
+                  "tx_fifo_full": {"shift": "3", "width": "1", "value": "0"},
+                  "intr_enabled": {"shift": "4", "width": "1", "value": "0"},
+                  "overun_error": {"shift": "5", "width": "1", "value": "0"},
+                  "frame_error": {"shift": "6", "width": "1", "value": "0"},
+                  "parrity_error": {"shift": "7", "width": "1", "value": "0"},
+                  "reserve": {"shift": "8", "width": "24", "value": "X"}
+                }
+            },
+            "ctrl_reg": 
+            {
+              "addr_offset": "0x0000000C",
+              "field":
+                {
+                  "rst_tx_fifo": {"shift": "0", "width": "1", "value": "0"},
+                  "rst_rx_fifo": {"shift": "1", "width": "1", "value": "0"},
+                  "reserve": {"shift": "2", "width": "2", "value": "X"},
+                  "enable_intr": {"shift": "4", "width": "1", "value": "0"},
+                  "reserve": {"shift": "5", "width": "27", "value": "X"}
+                }
+            }
+        }
+    }
+}
